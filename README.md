@@ -1,1 +1,1 @@
-This file is belong to RUBICTRON Please Don't Infringe Copyright.
+Those files are belong to RUBICTRON Please Don't Infringe Copyright.
