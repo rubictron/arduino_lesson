@@ -26,14 +26,12 @@
 
 int ledState=LOW;
 int ledPin=13;
-int switchPin=8;
 
 void setup() {
   // put your setup code here, to run once:
 
 
   pinMode(ledPin, OUTPUT);
-  pinMode(switchPin, INPUT);
 
 
 }
@@ -41,13 +39,18 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
 
-  if (digitalRead(8) == HIGH) {
+  Serial.print("analog reading is");
 
-    ledState=!ledState;
+  int val = analogRead(1);
 
-  } 
+  Serial.println(val);
 
-    digitalWrite(13, ledState);
+  val = map(val, 0, 1023, 0, 255);
+
+  Serial.println(val);
+
+
+  analogWrite(13, 255-val);
   
 
 

@@ -24,16 +24,16 @@
 
 ***************************************************************************************/
 
-int ledState=LOW;
-int ledPin=13;
-int switchPin=8;
+
+int ledPin = 13;
+int input = 8;
 
 void setup() {
   // put your setup code here, to run once:
 
 
   pinMode(ledPin, OUTPUT);
-  pinMode(switchPin, INPUT);
+  pinMode(input, INPUT);
 
 
 }
@@ -43,13 +43,13 @@ void loop() {
 
   if (digitalRead(8) == HIGH) {
 
-    ledState=!ledState;
+    digitalWrite(13, HIGH);
 
-  } 
+  }
+  else {
+    digitalWrite(13, LOW);
 
-    digitalWrite(13, ledState);
-  
-
+  }
 
 }
 
