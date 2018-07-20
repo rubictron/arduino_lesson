@@ -24,33 +24,34 @@
 
 ***************************************************************************************/
 
-
-
+const int trigPin = 9;
+const int echoPin = 10;
+long duration;
+int distanceCm, distanceInch;
 void setup() {
-  // put your setup code here, to run once:
 
-  pinMode(13, OUTPUT);
+pinMode(trigPin, OUTPUT);
+pinMode(echoPin, INPUT);
 
+Serial.begin(9600);
 }
-
 void loop() {
-  // put your main code here, to run repeatedly:
+digitalWrite(trigPin, LOW);
+delayMicroseconds(2);
+digitalWrite(trigPin, HIGH);
+delayMicroseconds(10);
+digitalWrite(trigPin, LOW);
+duration = pulseIn(echoPin, HIGH);
+distanceCm= duration*0.034/2;
+distanceInch = duration*0.0133/2;
 
-  digitalWrite(13, HIGH);
-  delay(1000);
-  digitalWrite(13, LOW);
-  delay(1000);
+Serial.print("Distance: "); // Prints string "Distance" on the LCD
+Serial.print(distanceCm); // Prints the distance value from the sensor
+Serial.print(" cm");
+delay(10);
 
-
+Serial.print("Distance: ");
+Serial.print(distanceInch);
+Serial.println(" inch");
+delay(10);
 }
-
-
-
-
-
-
-
-
-
-
-
