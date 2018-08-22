@@ -37,15 +37,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-
-  for (int i = 9; i < 14; i++) {
-    digitalWrite(i, HIGH);
-    delay(1000);
-    digitalWrite(i, LOW);
-    delay(1000);
-  }
-
-
+  
 int i = 9;
   while (i < 14) {
     digitalWrite(i, HIGH);
